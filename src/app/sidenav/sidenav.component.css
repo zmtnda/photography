@@ -1,0 +1,59 @@
+
+/*.sidenav-wrapper{
+    background-image: url(../../assets/sidenav.jpg);
+    width:500px;
+    height: 100%;
+    position: absolute;
+    transition: all 0.4s ease-in-out;
+    transition-delay: 0s;
+    z-index: 100;
+    overflow: hidden;
+}*/
+/*.sidenav-content{
+    width: 100%;
+    height: 100%;   
+}*/
+
+.logo{
+    background:url(../../assets/white_logo.png) no-repeat;
+    width: 300px;
+    height: 150px;
+    display: inline-block;
+    border: none !important;
+    cursor: pointer;    
+    margin-top: -65px;
+}
+.insta-social{
+    background:url(../../assets/insta1.png) no-repeat;
+    width: 300px;
+    height: 150px;
+    display: inline-block;
+    border: none !important;
+    cursor: pointer;    
+}
+.fa {
+    display: block;
+}
+.center-nav{
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: 'osmontseratt', sans-serif;
+    color: #fafafa;
+    font-size: 18px;
+}
+p {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    color: azure;
+}
+.text-nav{
+    margin-top: 230px;
+    font-size: 27px;
+}
+.name-nav{
+    margin-top: 280px;
+    font-size: 35px;   
+}

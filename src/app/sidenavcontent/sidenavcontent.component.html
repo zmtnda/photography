@@ -1,0 +1,18 @@
+<div class="sidenav-content" fxLayout='row' fxLayoutWrap fxLayoutGap="2rem" style="margin-left: -15px;">
+
+<md-card class="example-card" *ngFor="let category of categories" (click)='extractFirebaseImg(category)'>
+  <!--<md-card class="example-card" *ngFor="let category of categories" [routerLink]="['/sidenavcontentImages', category.caption]" >-->
+
+  <img md-card-image [src]=category.url >
+  <md-card-content>
+    <p>
+      {{category.caption}}
+    </p>
+  </md-card-content>
+  <md-card-actions>
+    <button md-button>LIKE</button>
+    <button md-button>SHARE</button>
+  </md-card-actions>
+</md-card>
+</div>
+

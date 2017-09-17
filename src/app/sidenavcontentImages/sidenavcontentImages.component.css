@@ -1,0 +1,24 @@
+/*.example-card{
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+    
+}
+ :host /deep/ .mat-card-image {
+    width: calc(100% + 48px);
+    margin: 0 -24px 16px -24px;
+    height: auto;
+ }*/
+ .example-card{
+    width: 500px;
+    height: auto;
+    padding: 50px;
+    max-width: 320px;
+    display: inline-block;
+    
+}
+ :host /deep/ .mat-card-image {
+    max-width: calc(100% + 48px);
+    margin: 0 -24px 16px -24px;
+    height: auto;
+ }
