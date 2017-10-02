@@ -23,15 +23,29 @@
 .mat-toolbar.mat-primary{
     background: #fff;
     color: black;
-    font-family: -apple-system,BlinkMacSystemFont,San Francisco,Helvetica Neue,Helvetica,Ubuntu,Roboto,Noto,Segoe UI,Arial,sans-serif;
+    /*font-family: -apple-system,BlinkMacSystemFont,San Francisco,Helvetica Neue,Helvetica,Ubuntu,Roboto,Noto,Segoe UI,Arial,sans-serif;*/
+    /*font-family: 'Audiowide', cursive;*/
 }
 .logo{
     background:url(../assets/black_logo.png) no-repeat;
-    width: 300px;
-    height: 115px;
+    width: 265px;
+    height: 145px;
     display: inline-block;
     border: none !important;
-    margin-top: -75px !important;
+    margin-top: -77px !important;
+}
+.instagram{
+    background:url(../assets/instagram.png) no-repeat;
+    width: 40px;
+    height: 30px;
+    display: table;
+    border: none !important;
+    margin-top: 8px;
+    cursor: pointer;
+}
+#inner {
+  display: table;
+  margin: 0 auto;
 }
 .mat-menu-panel.my-full-width-menu{
   max-width: none;
