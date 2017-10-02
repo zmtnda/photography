@@ -1,14 +1,29 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef,ViewEncapsulation } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable';
 import {Router, RouterModule} from '@angular/router';
+import {trigger, state, style, transition, animate, } from '@angular/animations';
+
 
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  animations: [
+    trigger('slideInOut', [
+      state('in', style({
+        transform: 'translate3d(0, 0, 0)'
+      })),
+      state('out', style({
+        transform: 'translate3d(100%, 0, 0)'
+      })),
+      transition('in => out', animate('400ms ease-in-out')),
+      transition('out => in', animate('400ms ease-in-out'))
+    ]),
+  ],
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
   // @ViewChild('wrapper') 
@@ -21,6 +36,11 @@ export class AppComponent {
 
   constructor(public router: Router) {}
 
+isIn = false;   // store state
+    toggleState() { // click handler
+        let bool = this.isIn;
+        this.isIn = bool === false ? true : false; 
+    }
   ngOnInit() {
       this.show = true;
     //   if (this.wrapperElement.nativeElement.offsetWidth <= 720) {

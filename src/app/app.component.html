@@ -1,23 +1,46 @@
-<!--<div class="main-container">-->
-  <!--<div #wrapper>-->
-    <md-sidenav-container class="container" fullscreen>
-      <!--<div class="sidenav-container">-->
-        <!--<md-sidenav #sidenav class="sidenav-wrapper" mode="push" opened="true">-->
-        <md-sidenav #sidenav class="sidenav-wrapper" [mode]="isLargeScreen() ? 'push' : 'over'" [opened]="isLargeScreen()">
-
-          <na-sidenav></na-sidenav>
-        </md-sidenav>
-      <!--</div>-->
-      <div class="sidenav-content" *ngIf='show'>
-      <!--<button type="button" md-button (click)="toggle()">-->
-        <na-sidenav-content (categoryEmitter)="showImages($event)"></na-sidenav-content>
-      <!--</button>-->
-      </div>
-      <div  *ngIf='!show'>
-      <router-outlet></router-outlet>
-      </div>
-    </md-sidenav-container >
-  <!--</div>-->
-  <!--<div class="content-container">
+  <!--<md-toolbar>
+    <span>Mr. Photographer</span>
+    <span class="example-spacer"></span>
+    <span class="options"><a [routerLink]="['/sidenav']" style = "text-decoration: none;
+    color: black;"> Home</a></span>
+    <span class="options">About</span>
+  </md-toolbar>
+  <div class="sidenav-content" *ngIf='show'>
+    <na-sidenav-content (categoryEmitter)="showImages($event)"></na-sidenav-content>
+  </div>
+  <div *ngIf='!show'>
+    <router-outlet></router-outlet>
   </div>-->
-<!--</div>-->
+<md-toolbar color="primary">
+  <span class="logo"></span>
+    <!--<button md-button routerLink="/">-->
+    <!--<md-icon>home</md-icon> 
+        title</button>-->
+
+    <!-- This fills the remaining space of the current row -->
+    <span class="fill-remaining-space"></span>
+    <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+      <na-sidenav-content (categoryEmitter)="showImages($event)" style="display: inline-flex;"></na-sidenav-content>
+    </div>
+    <button md-button [md-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
+     <md-icon>menu</md-icon>
+    </button>
+
+</md-toolbar>
+<!--<div class="content">
+  <na-sidenav-content (categoryEmitter)="showImages($event)" style="
+    display: inline-flex;"></na-sidenav-content>
+    <router-outlet></router-outlet>
+</div>-->
+
+    
+<!--<md-menu x-position="before" #menu="mdMenu">-->
+  <md-menu #menu="mdMenu" [overlapTrigger]="false" class="my-full-width-menu">
+    <na-sidenav-content (categoryEmitter)="showImages($event)" style="display: block;"></na-sidenav-content>
+    <!--<button md-button routerLink="/products" style="width: 100%;">PORTRAIT</button>
+    <button md-button routerLink="/dashboard" style="width: 100%;">LANDSCAPE</button>
+    <button md-button routerLink="/dashboard" style="width: 100%;">MATERNITY</button>
+    <button md-button routerLink="/products" style="width: 100%;">ABOUT ME</button>
+    <button md-button routerLink="/dashboard" style="width: 100%;">CONTACT</button>-->
+</md-menu>
+<router-outlet></router-outlet>

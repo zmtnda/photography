@@ -8,8 +8,8 @@ import { SidenavContentImagesComponent }   from './sidenavcontentImages/sidenavc
 
 const routes: Routes = [
   
-  { path: 'sidenav',  component: AppComponent },
-   { path: 'sidenavContent',  component: SidenavContentComponent },
+  // { path: 'sidenav',  component: AppComponent },
+  //  { path: 'sidenavContent',  component: SidenavContentComponent },
     // { path: 'sidenavcontentImages/:images',  component: SidenavContentImagesComponent ,data: { title: 'Heroes List' }}    
   { path: 'sidenavcontentImages',  component: SidenavContentImagesComponent },    
   { path: '', redirectTo: 'sidenav', pathMatch: 'full'},
