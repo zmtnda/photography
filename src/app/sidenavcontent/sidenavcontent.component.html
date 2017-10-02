@@ -1,8 +1,5 @@
-<div class="sidenav-content" fxLayout='row' fxLayoutWrap fxLayoutGap="2rem" style="margin-left: -15px;">
-
+<!--<div class="sidenav-content" fxLayout='row' fxLayoutWrap fxLayoutGap="2rem" style="margin-left: -15px;">
 <md-card class="example-card" *ngFor="let category of categories" (click)='extractFirebaseImg(category)'>
-  <!--<md-card class="example-card" *ngFor="let category of categories" [routerLink]="['/sidenavcontentImages', category.caption]" >-->
-
   <img md-card-image [src]=category.url >
   <md-card-content>
     <p>
@@ -14,5 +11,15 @@
     <button md-button>SHARE</button>
   </md-card-actions>
 </md-card>
+</div>
+-->
+<!--<div class="sidenav-content"  *ngFor="let category of categories" >
+<div class="example-card" (click)='extractFirebaseImg(category)'  [ngStyle]="{'background-image': 'url(' + category.url  + ')'}">
+ <h4>{{category.caption}}</h4>
+</div>
+</div>-->
+<div class="sidenav-content"  *ngFor="let category of categories" >
+  <button md-button routerLink="." (click)='extractFirebaseImg(category)'>{{category.caption}}</button>
+  <!--<span><a md-raised-button routerLink="." (click)='extractFirebaseImg(category)'>{{category.caption}}</a></span>-->
 </div>
 

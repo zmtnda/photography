@@ -17,6 +17,11 @@ export class SidenavContentImagesComponent implements OnInit{
       console.log("images should be shown");
       this.imagesUrl = this.appService.getImagesUrl();
       console.log(this.imagesUrl);
+
+      this.appService.navchange.subscribe(imagesURL => {
+        console.log("images URL onchange");
+        this.imagesUrl = imagesURL;
+      })
       // let images = this.route.snapshot.paramMap.get('images');
       // this.contactsService.getContact(id)
       //     .subscribe(contact => this.contact = contact);
