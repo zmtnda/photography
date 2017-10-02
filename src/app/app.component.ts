@@ -4,6 +4,8 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable';
 import {Router, RouterModule} from '@angular/router';
 import {trigger, state, style, transition, animate, } from '@angular/animations';
+import {MaterialModule} from '@angular/material'
+import { MdMenuTrigger } from '@angular/material'
 
 
 
@@ -26,6 +28,7 @@ import {trigger, state, style, transition, animate, } from '@angular/animations'
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
+  @ViewChild(MdMenuTrigger) trigger: MdMenuTrigger;
   // @ViewChild('wrapper') 
   // private wrapperElement: ElementRef;
   title = 'app';
@@ -66,4 +69,18 @@ isLargeScreen() {
     this.router.navigateByUrl('/sidenavcontentImages');
   }
   
+  goInstagram() {
+                // this.router.navigate(['/sidenavcontentImages']);
+    window.location.href='https://www.instagram.com/nanda_aung14/';
+  }
+  onResize($event){
+    const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    if (width< 960){
+      //  console.log("<960", width, $event);
+      this.trigger.closeMenu();
+    }else{
+      // console.log(">960", width, $event);
+    }
+    
+  }
 }

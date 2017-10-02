@@ -11,36 +11,21 @@
   <div *ngIf='!show'>
     <router-outlet></router-outlet>
   </div>-->
+  
 <md-toolbar color="primary">
-  <span class="logo"></span>
-    <!--<button md-button routerLink="/">-->
-    <!--<md-icon>home</md-icon> 
-        title</button>-->
-
-    <!-- This fills the remaining space of the current row -->
-    <span class="fill-remaining-space"></span>
-    <div fxLayout="row" fxShow="false" fxShow.gt-sm>
-      <na-sidenav-content (categoryEmitter)="showImages($event)" style="display: inline-flex;"></na-sidenav-content>
-    </div>
-    <button md-button [md-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
-     <md-icon>menu</md-icon>
-    </button>
-
+  <span style="font-family: 'Audiowide', cursive;">Mr. Photographer</span>
+  <span class="fill-remaining-space" style="width: inherit;"></span>
+  <span class="instagram" (click)="goInstagram()"></span>
+  <div fxLayout="row" fxShow="false" fxShow.gt-sm style="display: block !important;">
+    <na-sidenav-content (categoryEmitter)="showImages($event)" style="display: inline-flex; float: right !important;"></na-sidenav-content>
+  </div>
+  <button md-button [mdMenuTriggerFor]="menu" fxHide="false" fxHide.gt-sm>
+    <md-icon>menu</md-icon>
+  </button>
 </md-toolbar>
-<!--<div class="content">
-  <na-sidenav-content (categoryEmitter)="showImages($event)" style="
-    display: inline-flex;"></na-sidenav-content>
-    <router-outlet></router-outlet>
-</div>-->
-
-    
-<!--<md-menu x-position="before" #menu="mdMenu">-->
-  <md-menu #menu="mdMenu" [overlapTrigger]="false" class="my-full-width-menu">
-    <na-sidenav-content (categoryEmitter)="showImages($event)" style="display: block;"></na-sidenav-content>
-    <!--<button md-button routerLink="/products" style="width: 100%;">PORTRAIT</button>
-    <button md-button routerLink="/dashboard" style="width: 100%;">LANDSCAPE</button>
-    <button md-button routerLink="/dashboard" style="width: 100%;">MATERNITY</button>
-    <button md-button routerLink="/products" style="width: 100%;">ABOUT ME</button>
-    <button md-button routerLink="/dashboard" style="width: 100%;">CONTACT</button>-->
+<div (window:resize)="onResize($event)">
+</div>
+<md-menu #menu="mdMenu" [overlapTrigger]="false" class="my-full-width-menu" style="width:100%">
+  <na-sidenav-content id="inner" (categoryEmitter)="showImages($event)"></na-sidenav-content>
 </md-menu>
 <router-outlet></router-outlet>

@@ -18,8 +18,8 @@
  <h4>{{category.caption}}</h4>
 </div>
 </div>-->
-<div class="sidenav-content"  *ngFor="let category of categories" >
-  <button md-button routerLink="." (click)='extractFirebaseImg(category)'>{{category.caption}}</button>
+<div class="sidenav-content"  *ngFor="let category of categories" fxLayout='row' fxLayoutWrap fxLayoutGap="2rem" style="margin-left: -15px;">
+  <button md-button routerLink="." (click)='extractFirebaseImg(category)' style="font-family: 'Audiowide', cursive;">{{category.caption}}</button>
   <!--<span><a md-raised-button routerLink="." (click)='extractFirebaseImg(category)'>{{category.caption}}</a></span>-->
 </div>
 

@@ -50,6 +50,7 @@ export class SidenavComponent {
   //         console.log("after toggle ");
 
   // }
+  
   goInstagram() {
                 // this.router.navigate(['/sidenavcontentImages']);
     window.location.href='https://www.instagram.com/nanda_aung14/';
